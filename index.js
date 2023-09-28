@@ -4,6 +4,8 @@ require("dotenv").config()
 const app = express();
 const UserRoute = require("./routes/UserRoutes")
 const BlogRoute = require("./routes/BlogRoutes")
+const cors = require("cors")
+app.use(cors())
 app.use(express.json());
 app.use("/user",UserRoute)
 app.use("/blogs",BlogRoute)
